@@ -9,9 +9,9 @@
 ## 開發
 
 ```bash
-npm install
-npm run dev      # 區網網址可用手機開啟
-npm run build
+pnpm install
+pnpm dev      # 區網網址可用手機開啟
+pnpm build
 ```
 
 技術：Vue 3、Vite、vuedraggable、jsPDF。推到 `main` 會由 GitHub Actions 自動部署到 GitHub Pages。

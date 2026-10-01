@@ -105,8 +105,9 @@ onBeforeUnmount(() => {
 <template>
   <div class="app">
     <header class="app-header">
-      <h1>圖片轉 PDF</h1>
-      <p>選好照片、排好順序，一鍵合成 A4 的 PDF</p>
+      <h1>⭐胤子的PDF轉換器⭐</h1>
+      <p>親愛的老母，這是你鵝子幫你做的PDF轉換器</p>
+      <p>你可以上傳圖片後直接轉成PDF下載到你手機或電腦</p>
     </header>
 
     <main class="app-main">
