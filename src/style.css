@@ -1,0 +1,131 @@
+:root {
+  --bg: #fbf6ee;
+  --surface: #ffffff;
+  --thumb-bg: #f3ece2;
+  --text: #2a211b;
+  --muted: #6f6258;
+  --border: #eadfce;
+  --primary: #c4491c;
+  --primary-press: #a63a14;
+  --on-primary: #ffffff;
+  --accent-soft: #fde9dd;
+  --danger: #b3261e;
+  --shadow: 0 2px 8px rgb(80 50 20 / 0.08);
+  --shadow-lift: 0 12px 28px rgb(80 50 20 / 0.28);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d1814;
+    --surface: #2a231e;
+    --thumb-bg: #382f28;
+    --text: #f4ece3;
+    --muted: #b7a999;
+    --border: #3d332b;
+    --primary: #f08455;
+    --primary-press: #ff9a70;
+    --on-primary: #2a1206;
+    --accent-soft: #3b261b;
+    --danger: #ff8a80;
+    --shadow: 0 2px 8px rgb(0 0 0 / 0.35);
+    --shadow-lift: 0 12px 28px rgb(0 0 0 / 0.6);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-xl {
+  min-height: 60px;
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.btn-primary:active:not(:disabled) {
+  background: var(--primary-press);
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Drag states applied by SortableJS to the card root */
+.card.is-chosen {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-lift);
+}
+
+.card.is-ghost {
+  opacity: 0.35;
+}
+
+.card.is-dragging {
+  box-shadow: var(--shadow-lift);
+  cursor: grabbing;
+  opacity: 0.95;
+}
