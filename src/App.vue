@@ -7,6 +7,8 @@ import ResultSheet from './components/ResultSheet.vue'
 import { useImageList } from './composables/useImageList'
 import { buildPdf } from './utils/pdf'
 
+const appVersion = __APP_VERSION__
+
 const { items, adding, addFiles, removeItem, rotateItem, clearAll } = useImageList()
 
 const fileInput = ref(null)
@@ -168,6 +170,8 @@ onBeforeUnmount(() => {
           </template>
         </draggable>
       </section>
+
+      <p class="version">v{{ appVersion }}</p>
     </main>
 
     <footer v-if="items.length" class="action-bar">
@@ -223,6 +227,13 @@ onBeforeUnmount(() => {
 .app-header p {
   margin: 4px 0 0;
   color: var(--muted);
+}
+
+.version {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .app-main {
